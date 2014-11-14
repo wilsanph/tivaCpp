@@ -1,0 +1,566 @@
+******************************************************************************
+                  TI ARM Linker Unix v5.1.5                    
+******************************************************************************
+>> Linked Thu Nov 13 04:15:08 2014
+
+OUTPUT FILE NAME:   <tivaCpp.out>
+ENTRY POINT SYMBOL: "_c_int00"  address: 00000e71
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  FLASH                 00000000   00040000  00001356  0003ecaa  R  X
+  SRAM                  20000000   00008000  00000224  00007ddc  RW X
+
+
+SEGMENT ALLOCATION MAP
+
+run origin  load origin   length   init length attrs members
+----------  ----------- ---------- ----------- ----- -------
+00000000    00000000    00001358   00001358    r-x
+  00000000    00000000    0000026c   0000026c    r-- .intvecs
+  0000026c    0000026c    000010c2   000010c2    r-x .text
+  00001330    00001330    00000028   00000028    r-- .cinit
+20000000    20000000    00000224   00000000    rw-
+  20000000    20000000    00000200   00000000    rw- .stack
+  20000200    20000200    00000024   00000000    rw- .data
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.intvecs   0    00000000    0000026c     
+                  00000000    0000026c     tm4c123gh6pm_startup_ccs.obj (.intvecs)
+
+.init_array 
+*          0    00000000    00000000     UNINITIALIZED
+
+.text      0    0000026c    000010c2     
+                  0000026c    00000330     main.obj (.text)
+                  0000059c    000001b6     rtsv7M4_T_le_v4SPD16_eabi.lib : fd_add_t2.obj (.text)
+                  00000752    00000136                                   : fd_div_t2.obj (.text)
+                  00000888    00000104     tm4c123gh6pm_startup_ccs.obj (.text)
+                  0000098c    000000fc     rtsv7M4_T_le_v4SPD16_eabi.lib : fd_mul_t2.obj (.text)
+                  00000a88    000000a0     main.obj (.text:_ZN7gpTimer3pwmILNS_13gpTimerModuleE1073963008ELNS_9subTimers8subtimerE0EE6configEjfNS_7options10pwmOptions11outputLevel12_outputLevelE)
+                  00000b28    0000009c     main.obj (.text:_ZN4uart7uartModILNS_6module8instanceE1073790976EE10configUartENS_13configOptions8baudrate9_baudrateENS4_5nbits6_nbitsENS4_6parity7_parityENS4_8stopbits9_stopbitsEjNS4_4fifo5_fifoENS_11clockSource12_clockSourceE)
+                  00000bc4    0000009c     rtsv7M4_T_le_v4SPD16_eabi.lib : memcpy_t2.obj (.text)
+                  00000c60    00000094                                   : auto_init.obj (.text)
+                  00000cf4    0000008c     main.obj (.text:_ZN5clock5clock6configENS_13configOptions11clockSource7sourcesENS1_9clockRate10_clockRateENS1_11enablePIOSC12_enablePIOSCENS1_10enableMOSC11_enableMOSCE)
+                  00000d80    0000005e     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_rle.obj (.text)
+                  00000dde    0000004a                                   : fd_tos_t2.obj (.text)
+                  00000e28    00000048     main.obj (.text:_ZN3qei6qeiModILN6mapQEI10QEImodules6moduleE1073926144EE6configENS_7options15stallOnDebugger16stallOnDebugger_ENS5_18velocityPredivider18velocityPredividerENS5_11capVelocity12capVelocity_ENS5_11captureMode12captureMode_E)
+                  00000e70    00000048     rtsv7M4_T_le_v4SPD16_eabi.lib : boot.obj (.text)
+                  00000eb8    00000044                                   : cpy_tbl.obj (.text)
+                  00000efc    00000044                                   : exit.obj (.text)
+                  00000f40    00000044                                   : fd_tou_t2.obj (.text)
+                  00000f84    0000003c     main.obj (.text:_ZN7gpTimer3pwmILNS_13gpTimerModuleE1073963008ELNS_9subTimers8subtimerE0EE7setDutyEf)
+                  00000fc0    00000038     rtsv7M4_T_le_v4SPD16_eabi.lib : fs_tod_t2.obj (.text)
+                  00000ff8    00000024     main.obj (.text:_ZN4uart7uartModILNS_6module8instanceE1073790976EE8sendByteEh)
+                  0000101c    00000020     main.obj (.text:_ZN4Gpio11enableClockENS_10peripheral11_peripheralE)
+                  0000103c    00000020     main.obj (.text:_ZN4Gpio4gpioILNS_4Port5_PortE1073758208ELNS_3Pin4_PinE1EE16setAlternateModeENS_7options8altModes8altModesE)
+                  0000105c    00000020     main.obj (.text:_ZN4Gpio4gpioILNS_4Port5_PortE1073758208ELNS_3Pin4_PinE1EE7setModeENS_7options4mode4modeE)
+                  0000107c    00000020     main.obj (.text:_ZN4Gpio4gpioILNS_4Port5_PortE1073766400ELNS_3Pin4_PinE4EE16setAlternateModeENS_7options8altModes8altModesE)
+                  0000109c    00000020     main.obj (.text:_ZN4Gpio4gpioILNS_4Port5_PortE1073766400ELNS_3Pin4_PinE4EE7setModeENS_7options4mode4modeE)
+                  000010bc    00000020     main.obj (.text:_ZN4Gpio4gpioILNS_4Port5_PortE1073766400ELNS_3Pin4_PinE5EE16setAlternateModeENS_7options8altModes8altModesE)
+                  000010dc    00000020     main.obj (.text:_ZN4Gpio4gpioILNS_4Port5_PortE1073766400ELNS_3Pin4_PinE5EE7setModeENS_7options4mode4modeE)
+                  000010fc    00000020     main.obj (.text:_ZN4Gpio4gpioILNS_4Port5_PortE1073766400ELNS_3Pin4_PinE6EE16setAlternateModeENS_7options8altModes8altModesE)
+                  0000111c    00000020     main.obj (.text:_ZN4Gpio4gpioILNS_4Port5_PortE1073766400ELNS_3Pin4_PinE6EE7setModeENS_7options4mode4modeE)
+                  0000113c    00000020     main.obj (.text:_ZN4Gpio4gpioILNS_4Port5_PortE1073893376ELNS_3Pin4_PinE2EE7setModeENS_7options4mode4modeE)
+                  0000115c    00000020     main.obj (.text:_ZN4Gpio4gpioILNS_4Port5_PortE1073893376ELNS_3Pin4_PinE2EE9setIOmodeENS_7options6IOmode6IOmodeE)
+                  0000117c    0000001c     main.obj (.text:_ZN4Gpio4gpioILNS_4Port5_PortE1073758208ELNS_3Pin4_PinE0EE16setAlternateModeENS_7options8altModes8altModesE)
+                  00001198    0000001c     main.obj (.text:_ZN4Gpio4gpioILNS_4Port5_PortE1073758208ELNS_3Pin4_PinE0EE7setModeENS_7options4mode4modeE)
+                  000011b4    00000018     main.obj (.text:_ZN4uart7uartModILNS_6module8instanceE1073790976EE15clearInterruptsEj)
+                  000011cc    00000018     rtsv7M4_T_le_v4SPD16_eabi.lib : args_main.obj (.text)
+                  000011e4    00000014     main.obj (.text:_ZN3qei6qeiModILN6mapQEI10QEImodules6moduleE1073926144EE11enableClockEv)
+                  000011f8    00000014     main.obj (.text:_ZN3qei6qeiModILN6mapQEI10QEImodules6moduleE1073926144EE8setTimerEm)
+                  0000120c    00000014     main.obj (.text:_ZN4Gpio4gpioILNS_4Port5_PortE1073893376ELNS_3Pin4_PinE2EE6isHighEv)
+                  00001220    00000014     main.obj (.text:_ZN4Gpio4gpioILNS_4Port5_PortE1073893376ELNS_3Pin4_PinE2EE6toogleEv)
+                  00001234    00000014     main.obj (.text:_ZN4uart7uartModILNS_6module8instanceE1073790976EE11enableClockEv)
+                  00001248    00000014     main.obj (.text:_ZN7gpTimer3pwmILNS_13gpTimerModuleE1073963008ELNS_9subTimers8subtimerE0EE11enableClockEv)
+                  0000125c    00000014     rtsv7M4_T_le_v4SPD16_eabi.lib : _lock.obj (.text)
+                  00001270    00000010     main.obj (.text:_ZN3qei6qeiModILN6mapQEI10QEImodules6moduleE1073926144EE9enableQEIEv)
+                  00001280    00000010     main.obj (.text:_ZN4Gpio4gpioILNS_4Port5_PortE1073758208ELNS_3Pin4_PinE0EE15enableAsDigitalEv)
+                  00001290    00000010     main.obj (.text:_ZN4Gpio4gpioILNS_4Port5_PortE1073758208ELNS_3Pin4_PinE1EE15enableAsDigitalEv)
+                  000012a0    00000010     main.obj (.text:_ZN4Gpio4gpioILNS_4Port5_PortE1073766400ELNS_3Pin4_PinE4EE15enableAsDigitalEv)
+                  000012b0    00000010     main.obj (.text:_ZN4Gpio4gpioILNS_4Port5_PortE1073766400ELNS_3Pin4_PinE5EE15enableAsDigitalEv)
+                  000012c0    00000010     main.obj (.text:_ZN4Gpio4gpioILNS_4Port5_PortE1073766400ELNS_3Pin4_PinE6EE15enableAsDigitalEv)
+                  000012d0    00000010     main.obj (.text:_ZN4Gpio4gpioILNS_4Port5_PortE1073893376ELNS_3Pin4_PinE2EE15enableAsDigitalEv)
+                  000012e0    00000010     main.obj (.text:_ZN4Gpio4gpioILNS_4Port5_PortE1073893376ELNS_3Pin4_PinE2EE6setLowEv)
+                  000012f0    00000010     main.obj (.text:_ZN4Gpio4gpioILNS_4Port5_PortE1073893376ELNS_3Pin4_PinE2EE7setHighEv)
+                  00001300    0000000e     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_none.obj (.text:decompress:none)
+                  0000130e    00000002     --HOLE-- [fill = 0]
+                  00001310    0000000c     main.obj (.text:_ZN3qei6qeiModILN6mapQEI10QEImodules6moduleE1073926144EE11getSpeedRegEv)
+                  0000131c    0000000c     main.obj (.text:_ZN4uart7uartModILNS_6module8instanceE1073790976EE11receiveByteEv)
+                  00001328    00000006     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_rle.obj (.text:decompress:rle24)
+
+.cinit     0    00001330    00000028     
+                  00001330    00000016     (.cinit..data.load) [load image, compression = rle]
+                  00001346    00000002     --HOLE-- [fill = 0]
+                  00001348    00000008     (__TI_handler_table)
+                  00001350    00000008     (__TI_cinit_table)
+
+.stack     0    20000000    00000200     UNINITIALIZED
+                  20000000    00000200     --HOLE--
+
+.data      0    20000200    00000024     UNINITIALIZED
+                  20000200    00000010     main.obj (.data)
+                  20000210    00000008     rtsv7M4_T_le_v4SPD16_eabi.lib : _lock.obj (.data)
+                  20000218    00000008                                   : exit.obj (.data)
+                  20000220    00000004                                   : stkdepth_vars.obj (.data)
+
+
+LINKER GENERATED COPY TABLES
+
+__TI_cinit_table @ 00001350 records: 1, size/record: 8, table size: 8
+	.data: load addr=00001330, load size=00000016 bytes, run addr=20000200, run size=00000024 bytes, compression=rle
+
+
+LINKER GENERATED HANDLER TABLE
+
+__TI_handler_table @ 00001348 records: 2, size/record: 4, table size: 8
+	index: 0, handler: __TI_decompress_rle24
+	index: 1, handler: __TI_decompress_none
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address    name
+--------   ----
+00000efd   C$$EXIT
+UNDEFED    SHT$$INIT_ARRAY$$Base
+UNDEFED    SHT$$INIT_ARRAY$$Limit
+00000981   _Z8ResetISRv
+000011e5   _ZN3qei6qeiModILN6mapQEI10QEImodules6moduleE1073926144EE11enableClockEv
+00001311   _ZN3qei6qeiModILN6mapQEI10QEImodules6moduleE1073926144EE11getSpeedRegEv
+00000e29   _ZN3qei6qeiModILN6mapQEI10QEImodules6moduleE1073926144EE6configENS_7options15stallOnDebugger16stallOnDebugger_ENS5_18velocityPredivider18velocityPredividerENS5_11capVelocity12capVelocity_ENS5_11captureMode12captureMode_E
+000011f9   _ZN3qei6qeiModILN6mapQEI10QEImodules6moduleE1073926144EE8setTimerEm
+00001271   _ZN3qei6qeiModILN6mapQEI10QEImodules6moduleE1073926144EE9enableQEIEv
+0000101d   _ZN4Gpio11enableClockENS_10peripheral11_peripheralE
+00001281   _ZN4Gpio4gpioILNS_4Port5_PortE1073758208ELNS_3Pin4_PinE0EE15enableAsDigitalEv
+0000117d   _ZN4Gpio4gpioILNS_4Port5_PortE1073758208ELNS_3Pin4_PinE0EE16setAlternateModeENS_7options8altModes8altModesE
+00001199   _ZN4Gpio4gpioILNS_4Port5_PortE1073758208ELNS_3Pin4_PinE0EE7setModeENS_7options4mode4modeE
+00001291   _ZN4Gpio4gpioILNS_4Port5_PortE1073758208ELNS_3Pin4_PinE1EE15enableAsDigitalEv
+0000103d   _ZN4Gpio4gpioILNS_4Port5_PortE1073758208ELNS_3Pin4_PinE1EE16setAlternateModeENS_7options8altModes8altModesE
+0000105d   _ZN4Gpio4gpioILNS_4Port5_PortE1073758208ELNS_3Pin4_PinE1EE7setModeENS_7options4mode4modeE
+000012a1   _ZN4Gpio4gpioILNS_4Port5_PortE1073766400ELNS_3Pin4_PinE4EE15enableAsDigitalEv
+0000107d   _ZN4Gpio4gpioILNS_4Port5_PortE1073766400ELNS_3Pin4_PinE4EE16setAlternateModeENS_7options8altModes8altModesE
+0000109d   _ZN4Gpio4gpioILNS_4Port5_PortE1073766400ELNS_3Pin4_PinE4EE7setModeENS_7options4mode4modeE
+000012b1   _ZN4Gpio4gpioILNS_4Port5_PortE1073766400ELNS_3Pin4_PinE5EE15enableAsDigitalEv
+000010bd   _ZN4Gpio4gpioILNS_4Port5_PortE1073766400ELNS_3Pin4_PinE5EE16setAlternateModeENS_7options8altModes8altModesE
+000010dd   _ZN4Gpio4gpioILNS_4Port5_PortE1073766400ELNS_3Pin4_PinE5EE7setModeENS_7options4mode4modeE
+000012c1   _ZN4Gpio4gpioILNS_4Port5_PortE1073766400ELNS_3Pin4_PinE6EE15enableAsDigitalEv
+000010fd   _ZN4Gpio4gpioILNS_4Port5_PortE1073766400ELNS_3Pin4_PinE6EE16setAlternateModeENS_7options8altModes8altModesE
+0000111d   _ZN4Gpio4gpioILNS_4Port5_PortE1073766400ELNS_3Pin4_PinE6EE7setModeENS_7options4mode4modeE
+000012d1   _ZN4Gpio4gpioILNS_4Port5_PortE1073893376ELNS_3Pin4_PinE2EE15enableAsDigitalEv
+0000120d   _ZN4Gpio4gpioILNS_4Port5_PortE1073893376ELNS_3Pin4_PinE2EE6isHighEv
+000012e1   _ZN4Gpio4gpioILNS_4Port5_PortE1073893376ELNS_3Pin4_PinE2EE6setLowEv
+00001221   _ZN4Gpio4gpioILNS_4Port5_PortE1073893376ELNS_3Pin4_PinE2EE6toogleEv
+000012f1   _ZN4Gpio4gpioILNS_4Port5_PortE1073893376ELNS_3Pin4_PinE2EE7setHighEv
+0000113d   _ZN4Gpio4gpioILNS_4Port5_PortE1073893376ELNS_3Pin4_PinE2EE7setModeENS_7options4mode4modeE
+0000115d   _ZN4Gpio4gpioILNS_4Port5_PortE1073893376ELNS_3Pin4_PinE2EE9setIOmodeENS_7options6IOmode6IOmodeE
+000004ab   _ZN4core15IntEnableMasterEv
+000004b7   _ZN4core15enableInterruptENS_10interrupts10_interruptE
+0000040f   _ZN4uart5utils7calcBrdEjjRjS1_
+00000b29   _ZN4uart7uartModILNS_6module8instanceE1073790976EE10configUartENS_13configOptions8baudrate9_baudrateENS4_5nbits6_nbitsENS4_6parity7_parityENS4_8stopbits9_stopbitsEjNS4_4fifo5_fifoENS_11clockSource12_clockSourceE
+00001235   _ZN4uart7uartModILNS_6module8instanceE1073790976EE11enableClockEv
+0000131d   _ZN4uart7uartModILNS_6module8instanceE1073790976EE11receiveByteEv
+000011b5   _ZN4uart7uartModILNS_6module8instanceE1073790976EE15clearInterruptsEj
+00000ff9   _ZN4uart7uartModILNS_6module8instanceE1073790976EE8sendByteEh
+00000cf5   _ZN5clock5clock6configENS_13configOptions11clockSource7sourcesENS1_9clockRate10_clockRateENS1_11enablePIOSC12_enablePIOSCENS1_10enableMOSC11_enableMOSCE
+000003eb   _ZN6delays8delay_msEj
+00001249   _ZN7gpTimer3pwmILNS_13gpTimerModuleE1073963008ELNS_9subTimers8subtimerE0EE11enableClockEv
+00000a89   _ZN7gpTimer3pwmILNS_13gpTimerModuleE1073963008ELNS_9subTimers8subtimerE0EE6configEjfNS_7options10pwmOptions11outputLevel12_outputLevelE
+00000f85   _ZN7gpTimer3pwmILNS_13gpTimerModuleE1073963008ELNS_9subTimers8subtimerE0EE7setDutyEf
+20000200   __STACK_END
+00000200   __STACK_SIZE
+20000200   __STACK_TOP
+00001350   __TI_CINIT_Base
+00001358   __TI_CINIT_Limit
+00001348   __TI_Handler_Table_Base
+00001350   __TI_Handler_Table_Limit
+00000001   __TI_args_main
+00000c61   __TI_auto_init
+20000218   __TI_cleanup_ptr
+00001301   __TI_decompress_none
+00001329   __TI_decompress_rle24
+2000021c   __TI_dtors_ptr
+00000000   __TI_static_base__
+00000ddf   __aeabi_d2f
+00000f41   __aeabi_d2uiz
+000005a7   __aeabi_dadd
+00000753   __aeabi_ddiv
+0000098d   __aeabi_dmul
+0000059d   __aeabi_dsub
+00000fc1   __aeabi_f2d
+00000bc5   __aeabi_memcpy
+00000bc5   __aeabi_memcpy4
+00000bc5   __aeabi_memcpy8
+ffffffff   __binit__
+ffffffff   __c_args__
+20000000   __stack
+000011cd   _args_main
+00000e71   _c_int00
+20000210   _lock
+0000126b   _nop
+00001263   _register_lock
+0000125d   _register_unlock
+20000214   _unlock
+00000f01   abort
+000008b7   adcSeq0_isr
+000008b9   adcSeq1_isr
+000008bb   adcSeq2_isr
+000008bd   adcSeq3_isr
+000008fb   adc_1_Seq0_isr
+000008fd   adc_1_Seq1_isr
+000008ff   adc_1_Seq2_isr
+00000901   adc_1_Seq3_isr
+000008cd   analogComparator0_isr
+000008cf   analogComparator1_isr
+000008d1   analogComparator2_isr
+ffffffff   binit
+20000200   buffTx
+00000891   busFault_isr
+000008e9   can0_isr
+000008eb   can1_isr
+000008ed   can2_isr
+00000eb9   copy_in
+20000204   countReg
+00000897   debugMonitor_isr
+2000020c   duty
+000008ef   ethernet_isr
+00000f09   exit
+00000905   extBusInterface_isr
+0000094f   fan0_isr
+000008d5   flashCtrl_isr
+0000093f   fpu_isr
+00000000   g_pfnVectors
+0000097f   gpioA_isr
+0000089d   gpioB_isr
+0000089f   gpioC_isr
+000008a1   gpioD_isr
+000008a3   gpioE_isr
+000008d7   gpioF_isr
+000008d9   gpioG_isr
+000008db   gpioH_isr
+00000907   gpioJ_isr
+00000909   gpioK_isr
+0000090b   gpioL_isr
+00000949   gpioM_isr
+0000094b   gpioN_isr
+00000953   gpioP1_isr
+00000955   gpioP2_isr
+00000957   gpioP3_isr
+00000959   gpioP4_isr
+0000095b   gpioP5_isr
+0000095d   gpioP6_isr
+0000095f   gpioP7_isr
+00000951   gpioP_isr
+00000963   gpioQ1_isr
+00000965   gpioQ2_isr
+00000967   gpioQ3_isr
+00000969   gpioQ4_isr
+0000096b   gpioQ5_isr
+0000096d   gpioQ6_isr
+0000096f   gpioQ7_isr
+00000961   gpioQ_isr
+00000971   gpioR_isr
+00000973   gpioS_isr
+000008f1   hibernate_isr
+000008ab   i2c0masterSlave_isr
+000008e5   i2c1masterSlave_isr
+0000091b   i2c2masterSlave_isr
+0000091d   i2c3masterSlave_isr
+00000945   i2c4masterSlave_isr
+00000947   i2c5masterSlave_isr
+00000903   i2s0_isr
+00000943   lpc0_isr
+0000026d   main
+20000220   main_func_sp
+00000bc5   memcpy
+0000088f   mpuFault_isr
+00000941   peci0_isr
+00000899   pendSV_isr
+000008af   pwm0_isr
+000008b1   pwm1_isr
+000008b3   pwm2_isr
+000008f5   pwm3_isr
+000008ad   pwmFault_isr
+00000975   pwm_1_0_isr
+00000977   pwm_1_1_isr
+00000979   pwm_1_2_isr
+0000097b   pwm_1_3_isr
+0000097d   pwm_1_Fault_isr
+000008b5   quadEnc0_isr
+000008e7   quadEnc1_isr
+0000094d   quadEnc2_isr
+00000889   reset_isr
+20000208   speedReg
+000008a9   ssi0rxtx_isr
+000008df   ssi1rxtx_isr
+0000090d   ssi2rxtx_isr
+0000090f   ssi3rxtx_isr
+00000895   svCall_isr
+000008d3   sysCtrl_isr
+0000089b   sysTick_isr
+000008c1   timer0SubA_isr
+000008c3   timer0SubB_isr
+00000927   timer0WideA_isr
+00000929   timer0WideB_isr
+000008c5   timer1SubA_isr
+000008c7   timer1SubB_isr
+0000092b   timer1WideA_isr
+0000092d   timer1WideB_isr
+000008c9   timer2SubA_isr
+000008cb   timer2SubB_isr
+0000092f   timer2WideA_isr
+00000931   timer2WideB_isr
+000008e1   timer3SubA_isr
+000008e3   timer3SubB_isr
+00000933   timer3WideA_isr
+00000935   timer3WideB_isr
+0000091f   timer4SubA_isr
+00000921   timer4SubB_isr
+00000937   timer4WideA_isr
+00000939   timer4WideB_isr
+00000923   timer5SubA_isr
+00000925   timer5SubB_isr
+0000093b   timer5WideA_isr
+0000093d   timer5WideB_isr
+000008f9   uDMAerror_isr
+000008f7   uDMAsofTransfer_isr
+00000355   uart0rxtx_isr
+000008a7   uart1rxtx_isr
+000008dd   uart2rxtx_isr
+00000911   uart3rxtx_isr
+00000913   uart4rxtx_isr
+00000915   uart5rxtx_isr
+00000917   uart6rxtx_isr
+00000919   uart7rxtx_isr
+00000893   usageFault_isr
+000008f3   usb0_isr
+000008bf   watchdogTimer_isr
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address    name
+--------   ----
+00000000   __TI_static_base__
+00000000   g_pfnVectors
+00000001   __TI_args_main
+00000200   __STACK_SIZE
+0000026d   main
+00000355   uart0rxtx_isr
+000003eb   _ZN6delays8delay_msEj
+0000040f   _ZN4uart5utils7calcBrdEjjRjS1_
+000004ab   _ZN4core15IntEnableMasterEv
+000004b7   _ZN4core15enableInterruptENS_10interrupts10_interruptE
+0000059d   __aeabi_dsub
+000005a7   __aeabi_dadd
+00000753   __aeabi_ddiv
+00000889   reset_isr
+0000088f   mpuFault_isr
+00000891   busFault_isr
+00000893   usageFault_isr
+00000895   svCall_isr
+00000897   debugMonitor_isr
+00000899   pendSV_isr
+0000089b   sysTick_isr
+0000089d   gpioB_isr
+0000089f   gpioC_isr
+000008a1   gpioD_isr
+000008a3   gpioE_isr
+000008a7   uart1rxtx_isr
+000008a9   ssi0rxtx_isr
+000008ab   i2c0masterSlave_isr
+000008ad   pwmFault_isr
+000008af   pwm0_isr
+000008b1   pwm1_isr
+000008b3   pwm2_isr
+000008b5   quadEnc0_isr
+000008b7   adcSeq0_isr
+000008b9   adcSeq1_isr
+000008bb   adcSeq2_isr
+000008bd   adcSeq3_isr
+000008bf   watchdogTimer_isr
+000008c1   timer0SubA_isr
+000008c3   timer0SubB_isr
+000008c5   timer1SubA_isr
+000008c7   timer1SubB_isr
+000008c9   timer2SubA_isr
+000008cb   timer2SubB_isr
+000008cd   analogComparator0_isr
+000008cf   analogComparator1_isr
+000008d1   analogComparator2_isr
+000008d3   sysCtrl_isr
+000008d5   flashCtrl_isr
+000008d7   gpioF_isr
+000008d9   gpioG_isr
+000008db   gpioH_isr
+000008dd   uart2rxtx_isr
+000008df   ssi1rxtx_isr
+000008e1   timer3SubA_isr
+000008e3   timer3SubB_isr
+000008e5   i2c1masterSlave_isr
+000008e7   quadEnc1_isr
+000008e9   can0_isr
+000008eb   can1_isr
+000008ed   can2_isr
+000008ef   ethernet_isr
+000008f1   hibernate_isr
+000008f3   usb0_isr
+000008f5   pwm3_isr
+000008f7   uDMAsofTransfer_isr
+000008f9   uDMAerror_isr
+000008fb   adc_1_Seq0_isr
+000008fd   adc_1_Seq1_isr
+000008ff   adc_1_Seq2_isr
+00000901   adc_1_Seq3_isr
+00000903   i2s0_isr
+00000905   extBusInterface_isr
+00000907   gpioJ_isr
+00000909   gpioK_isr
+0000090b   gpioL_isr
+0000090d   ssi2rxtx_isr
+0000090f   ssi3rxtx_isr
+00000911   uart3rxtx_isr
+00000913   uart4rxtx_isr
+00000915   uart5rxtx_isr
+00000917   uart6rxtx_isr
+00000919   uart7rxtx_isr
+0000091b   i2c2masterSlave_isr
+0000091d   i2c3masterSlave_isr
+0000091f   timer4SubA_isr
+00000921   timer4SubB_isr
+00000923   timer5SubA_isr
+00000925   timer5SubB_isr
+00000927   timer0WideA_isr
+00000929   timer0WideB_isr
+0000092b   timer1WideA_isr
+0000092d   timer1WideB_isr
+0000092f   timer2WideA_isr
+00000931   timer2WideB_isr
+00000933   timer3WideA_isr
+00000935   timer3WideB_isr
+00000937   timer4WideA_isr
+00000939   timer4WideB_isr
+0000093b   timer5WideA_isr
+0000093d   timer5WideB_isr
+0000093f   fpu_isr
+00000941   peci0_isr
+00000943   lpc0_isr
+00000945   i2c4masterSlave_isr
+00000947   i2c5masterSlave_isr
+00000949   gpioM_isr
+0000094b   gpioN_isr
+0000094d   quadEnc2_isr
+0000094f   fan0_isr
+00000951   gpioP_isr
+00000953   gpioP1_isr
+00000955   gpioP2_isr
+00000957   gpioP3_isr
+00000959   gpioP4_isr
+0000095b   gpioP5_isr
+0000095d   gpioP6_isr
+0000095f   gpioP7_isr
+00000961   gpioQ_isr
+00000963   gpioQ1_isr
+00000965   gpioQ2_isr
+00000967   gpioQ3_isr
+00000969   gpioQ4_isr
+0000096b   gpioQ5_isr
+0000096d   gpioQ6_isr
+0000096f   gpioQ7_isr
+00000971   gpioR_isr
+00000973   gpioS_isr
+00000975   pwm_1_0_isr
+00000977   pwm_1_1_isr
+00000979   pwm_1_2_isr
+0000097b   pwm_1_3_isr
+0000097d   pwm_1_Fault_isr
+0000097f   gpioA_isr
+00000981   _Z8ResetISRv
+0000098d   __aeabi_dmul
+00000a89   _ZN7gpTimer3pwmILNS_13gpTimerModuleE1073963008ELNS_9subTimers8subtimerE0EE6configEjfNS_7options10pwmOptions11outputLevel12_outputLevelE
+00000b29   _ZN4uart7uartModILNS_6module8instanceE1073790976EE10configUartENS_13configOptions8baudrate9_baudrateENS4_5nbits6_nbitsENS4_6parity7_parityENS4_8stopbits9_stopbitsEjNS4_4fifo5_fifoENS_11clockSource12_clockSourceE
+00000bc5   __aeabi_memcpy
+00000bc5   __aeabi_memcpy4
+00000bc5   __aeabi_memcpy8
+00000bc5   memcpy
+00000c61   __TI_auto_init
+00000cf5   _ZN5clock5clock6configENS_13configOptions11clockSource7sourcesENS1_9clockRate10_clockRateENS1_11enablePIOSC12_enablePIOSCENS1_10enableMOSC11_enableMOSCE
+00000ddf   __aeabi_d2f
+00000e29   _ZN3qei6qeiModILN6mapQEI10QEImodules6moduleE1073926144EE6configENS_7options15stallOnDebugger16stallOnDebugger_ENS5_18velocityPredivider18velocityPredividerENS5_11capVelocity12capVelocity_ENS5_11captureMode12captureMode_E
+00000e71   _c_int00
+00000eb9   copy_in
+00000efd   C$$EXIT
+00000f01   abort
+00000f09   exit
+00000f41   __aeabi_d2uiz
+00000f85   _ZN7gpTimer3pwmILNS_13gpTimerModuleE1073963008ELNS_9subTimers8subtimerE0EE7setDutyEf
+00000fc1   __aeabi_f2d
+00000ff9   _ZN4uart7uartModILNS_6module8instanceE1073790976EE8sendByteEh
+0000101d   _ZN4Gpio11enableClockENS_10peripheral11_peripheralE
+0000103d   _ZN4Gpio4gpioILNS_4Port5_PortE1073758208ELNS_3Pin4_PinE1EE16setAlternateModeENS_7options8altModes8altModesE
+0000105d   _ZN4Gpio4gpioILNS_4Port5_PortE1073758208ELNS_3Pin4_PinE1EE7setModeENS_7options4mode4modeE
+0000107d   _ZN4Gpio4gpioILNS_4Port5_PortE1073766400ELNS_3Pin4_PinE4EE16setAlternateModeENS_7options8altModes8altModesE
+0000109d   _ZN4Gpio4gpioILNS_4Port5_PortE1073766400ELNS_3Pin4_PinE4EE7setModeENS_7options4mode4modeE
+000010bd   _ZN4Gpio4gpioILNS_4Port5_PortE1073766400ELNS_3Pin4_PinE5EE16setAlternateModeENS_7options8altModes8altModesE
+000010dd   _ZN4Gpio4gpioILNS_4Port5_PortE1073766400ELNS_3Pin4_PinE5EE7setModeENS_7options4mode4modeE
+000010fd   _ZN4Gpio4gpioILNS_4Port5_PortE1073766400ELNS_3Pin4_PinE6EE16setAlternateModeENS_7options8altModes8altModesE
+0000111d   _ZN4Gpio4gpioILNS_4Port5_PortE1073766400ELNS_3Pin4_PinE6EE7setModeENS_7options4mode4modeE
+0000113d   _ZN4Gpio4gpioILNS_4Port5_PortE1073893376ELNS_3Pin4_PinE2EE7setModeENS_7options4mode4modeE
+0000115d   _ZN4Gpio4gpioILNS_4Port5_PortE1073893376ELNS_3Pin4_PinE2EE9setIOmodeENS_7options6IOmode6IOmodeE
+0000117d   _ZN4Gpio4gpioILNS_4Port5_PortE1073758208ELNS_3Pin4_PinE0EE16setAlternateModeENS_7options8altModes8altModesE
+00001199   _ZN4Gpio4gpioILNS_4Port5_PortE1073758208ELNS_3Pin4_PinE0EE7setModeENS_7options4mode4modeE
+000011b5   _ZN4uart7uartModILNS_6module8instanceE1073790976EE15clearInterruptsEj
+000011cd   _args_main
+000011e5   _ZN3qei6qeiModILN6mapQEI10QEImodules6moduleE1073926144EE11enableClockEv
+000011f9   _ZN3qei6qeiModILN6mapQEI10QEImodules6moduleE1073926144EE8setTimerEm
+0000120d   _ZN4Gpio4gpioILNS_4Port5_PortE1073893376ELNS_3Pin4_PinE2EE6isHighEv
+00001221   _ZN4Gpio4gpioILNS_4Port5_PortE1073893376ELNS_3Pin4_PinE2EE6toogleEv
+00001235   _ZN4uart7uartModILNS_6module8instanceE1073790976EE11enableClockEv
+00001249   _ZN7gpTimer3pwmILNS_13gpTimerModuleE1073963008ELNS_9subTimers8subtimerE0EE11enableClockEv
+0000125d   _register_unlock
+00001263   _register_lock
+0000126b   _nop
+00001271   _ZN3qei6qeiModILN6mapQEI10QEImodules6moduleE1073926144EE9enableQEIEv
+00001281   _ZN4Gpio4gpioILNS_4Port5_PortE1073758208ELNS_3Pin4_PinE0EE15enableAsDigitalEv
+00001291   _ZN4Gpio4gpioILNS_4Port5_PortE1073758208ELNS_3Pin4_PinE1EE15enableAsDigitalEv
+000012a1   _ZN4Gpio4gpioILNS_4Port5_PortE1073766400ELNS_3Pin4_PinE4EE15enableAsDigitalEv
+000012b1   _ZN4Gpio4gpioILNS_4Port5_PortE1073766400ELNS_3Pin4_PinE5EE15enableAsDigitalEv
+000012c1   _ZN4Gpio4gpioILNS_4Port5_PortE1073766400ELNS_3Pin4_PinE6EE15enableAsDigitalEv
+000012d1   _ZN4Gpio4gpioILNS_4Port5_PortE1073893376ELNS_3Pin4_PinE2EE15enableAsDigitalEv
+000012e1   _ZN4Gpio4gpioILNS_4Port5_PortE1073893376ELNS_3Pin4_PinE2EE6setLowEv
+000012f1   _ZN4Gpio4gpioILNS_4Port5_PortE1073893376ELNS_3Pin4_PinE2EE7setHighEv
+00001301   __TI_decompress_none
+00001311   _ZN3qei6qeiModILN6mapQEI10QEImodules6moduleE1073926144EE11getSpeedRegEv
+0000131d   _ZN4uart7uartModILNS_6module8instanceE1073790976EE11receiveByteEv
+00001329   __TI_decompress_rle24
+00001348   __TI_Handler_Table_Base
+00001350   __TI_CINIT_Base
+00001350   __TI_Handler_Table_Limit
+00001358   __TI_CINIT_Limit
+20000000   __stack
+20000200   __STACK_END
+20000200   __STACK_TOP
+20000200   buffTx
+20000204   countReg
+20000208   speedReg
+2000020c   duty
+20000210   _lock
+20000214   _unlock
+20000218   __TI_cleanup_ptr
+2000021c   __TI_dtors_ptr
+20000220   main_func_sp
+ffffffff   __binit__
+ffffffff   __c_args__
+ffffffff   binit
+UNDEFED    SHT$$INIT_ARRAY$$Base
+UNDEFED    SHT$$INIT_ARRAY$$Limit
+
+[213 symbols]
