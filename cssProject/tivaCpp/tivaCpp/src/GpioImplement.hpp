@@ -12,17 +12,9 @@
 
 #include "../memorymap/MapGpio.hpp"
 #include "../include/Gpio.hpp"
-#include "../memorymap/GMapClock.hpp"
 
 namespace Gpio
 {
-	
-	template<Gpio::port::_port pPort>
-	void Gpio::Port<pPort>::enableClock( Gpio::peripheral::_peripheral pPeripheral )
-	{
-		reinterpret_cast<MapClock::ClockRegs*>
-			( MapClock::moduleAddresses::clockAddress )->RCGCGPIO = ( 1 << pPeripheral );
-	}
 
 	template<Gpio::port::_port pPort>
 	void Gpio::Port<pPort>::unlock()
@@ -203,6 +195,7 @@ namespace Gpio
 		reinterpret_cast<MapGpio::GpioRegs *>
 			( this->m_port )->GPIOODR |= 1 << this->m_pin;		
 	}	
+
 }
 
 

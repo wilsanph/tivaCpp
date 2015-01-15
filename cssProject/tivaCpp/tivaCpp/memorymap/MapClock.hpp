@@ -5,8 +5,8 @@
  *      Author: USER01
  */
 
-#ifndef GMAPCLOCK_HPP_
-#define GMAPCLOCK_HPP_
+#ifndef MAPCLOCK_HPP_
+#define MAPCLOCK_HPP_
 
 #pragma once
 
@@ -16,13 +16,6 @@
 
 namespace MapClock
 {
-	namespace moduleAddresses
-	{
-		enum _clockAddress
-		{
-			clockAddress = 0x400FE000
-		};
-	}
 
 	struct ClockRegs
 	{
@@ -177,4 +170,4 @@ namespace MapClock
 
 
 
-#endif /* GMAPCLOCK_HPP_ */
+#endif /* MAPCLOCK_HPP_ */

@@ -1,33 +1,33 @@
 ******************************************************************************
                   TI ARM Linker PC v5.1.6                      
 ******************************************************************************
->> Linked Mon Dec 29 00:14:37 2014
+>> Linked Sun Jan 11 21:29:22 2015
 
 OUTPUT FILE NAME:   <tivaCpp.out>
-ENTRY POINT SYMBOL: "_c_int00"  address: 00000a09
+ENTRY POINT SYMBOL: "_c_int00"  address: 00000e4d
 
 
 MEMORY CONFIGURATION
 
          name            origin    length      used     unused   attr    fill
 ----------------------  --------  ---------  --------  --------  ----  --------
-  FLASH                 00000000   00040000  00000b82  0003f47e  R  X
-  SRAM                  20000000   00008000  0000021c  00007de4  RW X
+  FLASH                 00000000   00040000  00000faa  0003f056  R  X
+  SRAM                  20000000   00008000  00000234  00007dcc  RW X
 
 
 SEGMENT ALLOCATION MAP
 
 run origin  load origin   length   init length attrs members
 ----------  ----------- ---------- ----------- ----- -------
-00000000    00000000    00000b88   00000b88    r-x
+00000000    00000000    00000fb0   00000fb0    r-x
   00000000    00000000    0000026c   0000026c    r-- .intvecs
-  0000026c    0000026c    000008da   000008da    r-x .text
-  00000b48    00000b48    00000004   00000004    r-- .init_array
-  00000b50    00000b50    00000038   00000038    r-- .cinit
-20000000    20000000    0000021c   00000000    rw-
+  0000026c    0000026c    00000d02   00000d02    r-x .text
+  00000f70    00000f70    00000004   00000004    r-- .init_array
+  00000f78    00000f78    00000038   00000038    r-- .cinit
+20000000    20000000    00000234   00000000    rw-
   20000000    20000000    00000200   00000000    rw- .stack
-  20000200    20000200    00000014   00000000    rw- .data
-  20000214    20000214    00000008   00000000    rw- .bss
+  20000200    20000200    0000001c   00000000    rw- .bss
+  2000021c    2000021c    00000018   00000000    rw- .data
 
 
 SECTION ALLOCATION MAP
@@ -38,58 +38,56 @@ section   page    origin      length       input sections
 .intvecs   0    00000000    0000026c     
                   00000000    0000026c     tm4c123gh6pm_startup_ccs.obj (.intvecs)
 
-.text      0    0000026c    000008da     
-                  0000026c    0000047c     main.obj (.text)
-                  000006e8    00000104     tm4c123gh6pm_startup_ccs.obj (.text)
-                  000007ec    0000009c     rtsv7M4_T_le_v4SPD16_eabi.lib : memcpy_t2.obj (.text)
-                  00000888    00000094                                   : auto_init.obj (.text)
-                  0000091c    0000008c     main.obj (.text:_ZN5clock5clock6configENS_13configOptions11clockSource7sourcesENS1_9clockRate10_clockRateENS1_11enablePIOSC12_enablePIOSCENS1_10enableMOSC11_enableMOSCE)
-                  000009a8    0000005e     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_rle.obj (.text)
-                  00000a06    00000002     --HOLE-- [fill = 0]
-                  00000a08    00000048                                   : boot.obj (.text)
-                  00000a50    00000044                                   : cpy_tbl.obj (.text)
-                  00000a94    00000044                                   : exit.obj (.text)
-                  00000ad8    0000001c     main.obj (.text:_ZN4Gpio4PortILNS_4port5_portE1073893376EE11enableClockENS_10peripheral11_peripheralE)
-                  00000af4    00000018     rtsv7M4_T_le_v4SPD16_eabi.lib : args_main.obj (.text)
-                  00000b0c    00000014                                   : _lock.obj (.text)
-                  00000b20    00000012                                   : copy_zero_init.obj (.text:decompress:ZI)
-                  00000b32    0000000e                                   : copy_decompress_none.obj (.text:decompress:none)
-                  00000b40    00000006                                   : copy_decompress_rle.obj (.text:decompress:rle24)
+.text      0    0000026c    00000d02     
+                  0000026c    0000094c     main.obj (.text)
+                  00000bb8    00000104     tm4c123gh6pm_startup_ccs.obj (.text)
+                  00000cbc    0000009c     rtsv7M4_T_le_v4SPD16_eabi.lib : memcpy_t2.obj (.text)
+                  00000d58    00000094                                   : auto_init.obj (.text)
+                  00000dec    0000005e                                   : copy_decompress_rle.obj (.text)
+                  00000e4a    00000002     --HOLE-- [fill = 0]
+                  00000e4c    00000048                                   : boot.obj (.text)
+                  00000e94    00000044                                   : cpy_tbl.obj (.text)
+                  00000ed8    00000044                                   : exit.obj (.text)
+                  00000f1c    00000018                                   : args_main.obj (.text)
+                  00000f34    00000014                                   : _lock.obj (.text)
+                  00000f48    00000012                                   : copy_zero_init.obj (.text:decompress:ZI)
+                  00000f5a    0000000e                                   : copy_decompress_none.obj (.text:decompress:none)
+                  00000f68    00000006                                   : copy_decompress_rle.obj (.text:decompress:rle24)
 
 .init_array 
-*          0    00000b48    00000004     
-                  00000b48    00000004     main.obj (.init_array)
+*          0    00000f70    00000004     
+                  00000f70    00000004     main.obj (.init_array)
 
-.cinit     0    00000b50    00000038     
-                  00000b50    0000000f     (.cinit..data.load) [load image, compression = rle]
-                  00000b5f    00000001     --HOLE-- [fill = 0]
-                  00000b60    0000000c     (__TI_handler_table)
-                  00000b6c    00000004     --HOLE-- [fill = 0]
-                  00000b70    00000008     (.cinit..bss.load) [load image, compression = zero_init]
-                  00000b78    00000010     (__TI_cinit_table)
+.cinit     0    00000f78    00000038     
+                  00000f78    00000013     (.cinit..data.load) [load image, compression = rle]
+                  00000f8b    00000001     --HOLE-- [fill = 0]
+                  00000f8c    0000000c     (__TI_handler_table)
+                  00000f98    00000008     (.cinit..bss.load) [load image, compression = zero_init]
+                  00000fa0    00000010     (__TI_cinit_table)
 
 .stack     0    20000000    00000200     UNINITIALIZED
                   20000000    00000200     --HOLE--
 
-.data      0    20000200    00000014     UNINITIALIZED
-                  20000200    00000008     rtsv7M4_T_le_v4SPD16_eabi.lib : _lock.obj (.data)
-                  20000208    00000008                                   : exit.obj (.data)
-                  20000210    00000004                                   : stkdepth_vars.obj (.data)
+.bss       0    20000200    0000001c     UNINITIALIZED
+                  20000200    0000001c     main.obj (.bss)
 
-.bss       0    20000214    00000008     UNINITIALIZED
-                  20000214    00000008     main.obj (.bss)
+.data      0    2000021c    00000018     UNINITIALIZED
+                  2000021c    00000008     rtsv7M4_T_le_v4SPD16_eabi.lib : _lock.obj (.data)
+                  20000224    00000008                                   : exit.obj (.data)
+                  2000022c    00000004     main.obj (.data)
+                  20000230    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : stkdepth_vars.obj (.data)
 
 
 LINKER GENERATED COPY TABLES
 
-__TI_cinit_table @ 00000b78 records: 2, size/record: 8, table size: 16
-	.data: load addr=00000b50, load size=0000000f bytes, run addr=20000200, run size=00000014 bytes, compression=rle
-	.bss: load addr=00000b70, load size=00000008 bytes, run addr=20000214, run size=00000008 bytes, compression=zero_init
+__TI_cinit_table @ 00000fa0 records: 2, size/record: 8, table size: 16
+	.data: load addr=00000f78, load size=00000013 bytes, run addr=2000021c, run size=00000018 bytes, compression=rle
+	.bss: load addr=00000f98, load size=00000008 bytes, run addr=20000200, run size=0000001c bytes, compression=zero_init
 
 
 LINKER GENERATED HANDLER TABLE
 
-__TI_handler_table @ 00000b60 records: 3, size/record: 4, table size: 12
+__TI_handler_table @ 00000f8c records: 3, size/record: 4, table size: 12
 	index: 0, handler: __TI_decompress_rle24
 	index: 1, handler: __TI_decompress_none
 	index: 2, handler: __TI_zero_init
@@ -99,197 +97,217 @@ GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name
 
 address    name
 --------   ----
-00000a95   C$$EXIT
-00000b48   SHT$$INIT_ARRAY$$Base
-00000b4c   SHT$$INIT_ARRAY$$Limit
-000007e1   _Z8ResetISRv
-0000066d   _ZN4Gpio3Pin11setPullDownEv
-0000068d   _ZN4Gpio3Pin12setOpenDrainEv
-00000591   _ZN4Gpio3Pin13setAnalogModeEv
-000004b3   _ZN4Gpio3Pin15configInterruptENS_6config10interrupts12intSenseType13_intSenseTypeENS2_17intSenseBothEdges18_intSenseBothEdgesENS2_12intEventType13_intEventTypeE
-0000046f   _ZN4Gpio3Pin15enableInterruptEv
-000005f5   _ZN4Gpio3Pin15setCurrentDriveENS_6config12currentDrive13_currentDriveE
-0000048f   _ZN4Gpio3Pin16disableInterruptEv
-000005b5   _ZN4Gpio3Pin16setAlternateModeENS_6config8altModes9_altModesE
-000002dd   _ZN4Gpio3Pin17enableDigitalFuncEv
-000002fd   _ZN4Gpio3Pin18disableDigitalFuncEv
-00000455   _ZN4Gpio3Pin5isLowEv
-00000427   _ZN4Gpio3Pin6isHighEv
-000003a1   _ZN4Gpio3Pin6setLowEv
-000003f9   _ZN4Gpio3Pin6toggleEv
-000003bb   _ZN4Gpio3Pin7setHighEv
-00000321   _ZN4Gpio3Pin7setModeENS_6config4mode5_modeE
-000003d7   _ZN4Gpio3Pin8setValueENS_5state6_stateE
-0000056d   _ZN4Gpio3Pin9clearFlagEv
-00000361   _ZN4Gpio3Pin9setIOModeENS_6config6ioMode7_ioModeE
-0000064d   _ZN4Gpio3Pin9setPullUpEv
-000002bd   _ZN4Gpio3PinC1ENS_4port5_portENS_3pin4_pinE
-000002a5   _ZN4Gpio3PinC1Ev
-000002bd   _ZN4Gpio3PinC2ENS_4port5_portENS_3pin4_pinE
-000002a5   _ZN4Gpio3PinC2Ev
-00000ad9   _ZN4Gpio4PortILNS_4port5_portE1073893376EE11enableClockENS_10peripheral11_peripheralE
-0000091d   _ZN5clock5clock6configENS_13configOptions11clockSource7sourcesENS1_9clockRate10_clockRateENS1_11enablePIOSC12_enablePIOSCENS1_10enableMOSC11_enableMOSCE
-000006ad   _ZN6delays8delay_msEj
+00000ed9   C$$EXIT
+00000f70   SHT$$INIT_ARRAY$$Base
+00000f74   SHT$$INIT_ARRAY$$Limit
+00000cb1   _Z8ResetISRv
+00000861   _ZN4Gpio3Pin11setPullDownEv
+00000881   _ZN4Gpio3Pin12setOpenDrainEv
+00000789   _ZN4Gpio3Pin13setAnalogModeEv
+000006a9   _ZN4Gpio3Pin15configInterruptENS_6config10interrupts12intSenseType13_intSenseTypeENS2_17intSenseBothEdges18_intSenseBothEdgesENS2_12intEventType13_intEventTypeE
+00000661   _ZN4Gpio3Pin15enableInterruptEv
+000007e9   _ZN4Gpio3Pin15setCurrentDriveENS_6config12currentDrive13_currentDriveE
+00000685   _ZN4Gpio3Pin16disableInterruptEv
+000007a9   _ZN4Gpio3Pin16setAlternateModeENS_6config8altModes9_altModesE
+000004af   _ZN4Gpio3Pin17enableDigitalFuncEv
+000004cf   _ZN4Gpio3Pin18disableDigitalFuncEv
+00000643   _ZN4Gpio3Pin5isLowEv
+00000615   _ZN4Gpio3Pin6isHighEv
+00000573   _ZN4Gpio3Pin6setLowEv
+000005e1   _ZN4Gpio3Pin6toggleEv
+00000591   _ZN4Gpio3Pin7setHighEv
+000004f3   _ZN4Gpio3Pin7setModeENS_6config4mode5_modeE
+000005b5   _ZN4Gpio3Pin8setValueENS_5state6_stateE
+00000763   _ZN4Gpio3Pin9clearFlagEv
+00000533   _ZN4Gpio3Pin9setIOModeENS_6config6ioMode7_ioModeE
+00000841   _ZN4Gpio3Pin9setPullUpEv
+0000048f   _ZN4Gpio3PinC1ENS_4port5_portENS_3pin4_pinE
+00000477   _ZN4Gpio3PinC1Ev
+0000048f   _ZN4Gpio3PinC2ENS_4port5_portENS_3pin4_pinE
+00000477   _ZN4Gpio3PinC2Ev
+00000ab9   _ZN4core15IntEnableMasterEv
+00000ac5   _ZN4core15enableInterruptENS_10interrupts10_interruptE
+2000022c   _ZN5clock5Clock14CLOCK_RATE_MHZE
+00000453   _ZN5clock5Clock14enableADCClockENS_10peripheral3adc4_adcE
+000003a5   _ZN5clock5Clock15enableGpioClockENS_10peripheral4gpio5_gpioENS_6config11gpioBusType12_gpioBusTypeE
+0000042f   _ZN5clock5Clock15enableUartClockENS_10peripheral4uart5_uartE
+0000040b   _ZN5clock5Clock20enableWideTimerClockENS_10peripheral5timer9wideTimer10_wideTimerE
+000003e7   _ZN5clock5Clock22enableSimpleTimerClockENS_10peripheral5timer11simpleTimer12_simpleTimerE
+0000031d   _ZN5clock5Clock6configENS_6config11clockSource12_clockSourceENS1_9clockRate10_clockRateENS1_27precisionInternalOscillator28_precisionInternalOscillatorENS1_14mainOscillator15_mainOscillatorE
+0000030b   _ZN5clock5ClockC1Ev
+0000030b   _ZN5clock5ClockC2Ev
+00000a95   _ZN6delays8delay_msEj
+00000a5b   _ZN7GpTimer5Timer11enableTimerEv
+00000a39   _ZN7GpTimer5Timer12disableTimerEv
+00000a79   _ZN7GpTimer5Timer14clearInterruptENS_6config11timerConfig13interruptFlag14_interruptFlagE
+000008d9   _ZN7GpTimer5Timer6configEmfNS_6config11timerConfig11joiningMode12_joiningModeENS2_14countDirection15_countDirectionENS2_9timerMode10_timerModeENS2_15timerInterrupts16_timerInterruptsE
+000008b9   _ZN7GpTimer5TimerC1ENS_11timerModule12_timerModuleENS_8subtimer9_subtimerE
+000008a1   _ZN7GpTimer5TimerC1Ev
+000008b9   _ZN7GpTimer5TimerC2ENS_11timerModule12_timerModuleENS_8subtimer9_subtimerE
+000008a1   _ZN7GpTimer5TimerC2Ev
 20000200   __STACK_END
 00000200   __STACK_SIZE
 20000200   __STACK_TOP
-00000b78   __TI_CINIT_Base
-00000b88   __TI_CINIT_Limit
-00000b60   __TI_Handler_Table_Base
-00000b6c   __TI_Handler_Table_Limit
+00000fa0   __TI_CINIT_Base
+00000fb0   __TI_CINIT_Limit
+00000f8c   __TI_Handler_Table_Base
+00000f98   __TI_Handler_Table_Limit
 00000001   __TI_args_main
-00000889   __TI_auto_init
-20000208   __TI_cleanup_ptr
-00000b33   __TI_decompress_none
-00000b41   __TI_decompress_rle24
-2000020c   __TI_dtors_ptr
+00000d59   __TI_auto_init
+20000224   __TI_cleanup_ptr
+00000f5b   __TI_decompress_none
+00000f69   __TI_decompress_rle24
+20000228   __TI_dtors_ptr
 00000000   __TI_static_base__
-00000b21   __TI_zero_init
-000007ed   __aeabi_memcpy
-000007ed   __aeabi_memcpy4
-000007ed   __aeabi_memcpy8
+00000f49   __TI_zero_init
+00000cbd   __aeabi_memcpy
+00000cbd   __aeabi_memcpy4
+00000cbd   __aeabi_memcpy8
 ffffffff   __binit__
 ffffffff   __c_args__
 20000000   __stack
-000006d1   __sti___8_main_cpp_70a26d19
-00000af5   _args_main
-00000a09   _c_int00
-20000200   _lock
-00000b1b   _nop
-00000b13   _register_lock
-00000b0d   _register_unlock
-20000204   _unlock
-00000a99   abort
-00000717   adcSeq0_isr
-00000719   adcSeq1_isr
-0000071b   adcSeq2_isr
-0000071d   adcSeq3_isr
-0000075b   adc_1_Seq0_isr
-0000075d   adc_1_Seq1_isr
-0000075f   adc_1_Seq2_isr
-00000761   adc_1_Seq3_isr
-0000072d   analogComparator0_isr
-0000072f   analogComparator1_isr
-00000731   analogComparator2_isr
+00000b5f   __sti___8_main_cpp_70a26d19
+00000f1d   _args_main
+00000e4d   _c_int00
+2000021c   _lock
+00000f43   _nop
+00000f3b   _register_lock
+00000f35   _register_unlock
+20000220   _unlock
+00000edd   abort
+00000be7   adcSeq0_isr
+00000be9   adcSeq1_isr
+00000beb   adcSeq2_isr
+00000bed   adcSeq3_isr
+00000c2b   adc_1_Seq0_isr
+00000c2d   adc_1_Seq1_isr
+00000c2f   adc_1_Seq2_isr
+00000c31   adc_1_Seq3_isr
+00000bfd   analogComparator0_isr
+00000bff   analogComparator1_isr
+00000c01   analogComparator2_isr
 ffffffff   binit
-000006f1   busFault_isr
-00000749   can0_isr
-0000074b   can1_isr
-0000074d   can2_isr
-00000a51   copy_in
-000006f7   debugMonitor_isr
-0000074f   ethernet_isr
-00000aa1   exit
-00000765   extBusInterface_isr
-000007af   fan0_isr
-00000735   flashCtrl_isr
-0000079f   fpu_isr
+00000bc1   busFault_isr
+00000c19   can0_isr
+00000c1b   can1_isr
+00000c1d   can2_isr
+00000e95   copy_in
+00000bc7   debugMonitor_isr
+00000c1f   ethernet_isr
+00000ee5   exit
+00000c35   extBusInterface_isr
+00000c7f   fan0_isr
+00000c05   flashCtrl_isr
+00000c6f   fpu_isr
 00000000   g_pfnVectors
-000007df   gpioA_isr
-000006fd   gpioB_isr
-000006ff   gpioC_isr
-00000701   gpioD_isr
-00000703   gpioE_isr
-00000737   gpioF_isr
-00000739   gpioG_isr
-0000073b   gpioH_isr
-00000767   gpioJ_isr
-00000769   gpioK_isr
-0000076b   gpioL_isr
-000007a9   gpioM_isr
-000007ab   gpioN_isr
-000007b3   gpioP1_isr
-000007b5   gpioP2_isr
-000007b7   gpioP3_isr
-000007b9   gpioP4_isr
-000007bb   gpioP5_isr
-000007bd   gpioP6_isr
-000007bf   gpioP7_isr
-000007b1   gpioP_isr
-000007c3   gpioQ1_isr
-000007c5   gpioQ2_isr
-000007c7   gpioQ3_isr
-000007c9   gpioQ4_isr
-000007cb   gpioQ5_isr
-000007cd   gpioQ6_isr
-000007cf   gpioQ7_isr
-000007c1   gpioQ_isr
-000007d1   gpioR_isr
-000007d3   gpioS_isr
-00000751   hibernate_isr
-0000070b   i2c0masterSlave_isr
-00000745   i2c1masterSlave_isr
-0000077b   i2c2masterSlave_isr
-0000077d   i2c3masterSlave_isr
-000007a5   i2c4masterSlave_isr
-000007a7   i2c5masterSlave_isr
-00000763   i2s0_isr
-20000214   led
-000007a3   lpc0_isr
+00000caf   gpioA_isr
+00000bcd   gpioB_isr
+00000bcf   gpioC_isr
+00000bd1   gpioD_isr
+00000bd3   gpioE_isr
+00000c07   gpioF_isr
+00000c09   gpioG_isr
+00000c0b   gpioH_isr
+00000c37   gpioJ_isr
+00000c39   gpioK_isr
+00000c3b   gpioL_isr
+00000c79   gpioM_isr
+00000c7b   gpioN_isr
+00000c83   gpioP1_isr
+00000c85   gpioP2_isr
+00000c87   gpioP3_isr
+00000c89   gpioP4_isr
+00000c8b   gpioP5_isr
+00000c8d   gpioP6_isr
+00000c8f   gpioP7_isr
+00000c81   gpioP_isr
+00000c93   gpioQ1_isr
+00000c95   gpioQ2_isr
+00000c97   gpioQ3_isr
+00000c99   gpioQ4_isr
+00000c9b   gpioQ5_isr
+00000c9d   gpioQ6_isr
+00000c9f   gpioQ7_isr
+00000c91   gpioQ_isr
+00000ca1   gpioR_isr
+00000ca3   gpioS_isr
+00000c21   hibernate_isr
+00000bdb   i2c0masterSlave_isr
+00000c15   i2c1masterSlave_isr
+00000c4b   i2c2masterSlave_isr
+00000c4d   i2c3masterSlave_isr
+00000c75   i2c4masterSlave_isr
+00000c77   i2c5masterSlave_isr
+00000c33   i2s0_isr
+20000204   led
+2000020c   led2
+00000c73   lpc0_isr
 0000026d   main
-20000210   main_func_sp
-000007ed   memcpy
-000006ef   mpuFault_isr
-000007a1   peci0_isr
-000006f9   pendSV_isr
-0000070f   pwm0_isr
-00000711   pwm1_isr
-00000713   pwm2_isr
-00000755   pwm3_isr
-0000070d   pwmFault_isr
-000007d5   pwm_1_0_isr
-000007d7   pwm_1_1_isr
-000007d9   pwm_1_2_isr
-000007db   pwm_1_3_isr
-000007dd   pwm_1_Fault_isr
-00000715   quadEnc0_isr
-00000747   quadEnc1_isr
-000007ad   quadEnc2_isr
-000006e9   reset_isr
-00000709   ssi0rxtx_isr
-0000073f   ssi1rxtx_isr
-0000076d   ssi2rxtx_isr
-0000076f   ssi3rxtx_isr
-000006f5   svCall_isr
-00000733   sysCtrl_isr
-000006fb   sysTick_isr
-00000721   timer0SubA_isr
-00000723   timer0SubB_isr
-00000787   timer0WideA_isr
-00000789   timer0WideB_isr
-00000725   timer1SubA_isr
-00000727   timer1SubB_isr
-0000078b   timer1WideA_isr
-0000078d   timer1WideB_isr
-00000729   timer2SubA_isr
-0000072b   timer2SubB_isr
-0000078f   timer2WideA_isr
-00000791   timer2WideB_isr
-00000741   timer3SubA_isr
-00000743   timer3SubB_isr
-00000793   timer3WideA_isr
-00000795   timer3WideB_isr
-0000077f   timer4SubA_isr
-00000781   timer4SubB_isr
-00000797   timer4WideA_isr
-00000799   timer4WideB_isr
-00000783   timer5SubA_isr
-00000785   timer5SubB_isr
-0000079b   timer5WideA_isr
-0000079d   timer5WideB_isr
-00000759   uDMAerror_isr
-00000757   uDMAsofTransfer_isr
-00000705   uart0rxtx_isr
-00000707   uart1rxtx_isr
-0000073d   uart2rxtx_isr
-00000771   uart3rxtx_isr
-00000773   uart4rxtx_isr
-00000775   uart5rxtx_isr
-00000777   uart6rxtx_isr
-00000779   uart7rxtx_isr
-000006f3   usageFault_isr
-00000753   usb0_isr
-0000071f   watchdogTimer_isr
+20000230   main_func_sp
+00000cbd   memcpy
+00000bbf   mpuFault_isr
+00000c71   peci0_isr
+00000bc9   pendSV_isr
+00000bdf   pwm0_isr
+00000be1   pwm1_isr
+00000be3   pwm2_isr
+00000c25   pwm3_isr
+00000bdd   pwmFault_isr
+00000ca5   pwm_1_0_isr
+00000ca7   pwm_1_1_isr
+00000ca9   pwm_1_2_isr
+00000cab   pwm_1_3_isr
+00000cad   pwm_1_Fault_isr
+00000be5   quadEnc0_isr
+00000c17   quadEnc1_isr
+00000c7d   quadEnc2_isr
+00000bb9   reset_isr
+20000214   sTimer0
+00000bd9   ssi0rxtx_isr
+00000c0f   ssi1rxtx_isr
+00000c3d   ssi2rxtx_isr
+00000c3f   ssi3rxtx_isr
+00000bc5   svCall_isr
+00000c03   sysCtrl_isr
+00000bcb   sysTick_isr
+20000200   systemClock
+00000bf1   timer0SubA_isr
+00000bf3   timer0SubB_isr
+000002f9   timer0WideA_isr
+00000c59   timer0WideB_isr
+00000bf5   timer1SubA_isr
+00000bf7   timer1SubB_isr
+00000c5b   timer1WideA_isr
+00000c5d   timer1WideB_isr
+00000bf9   timer2SubA_isr
+00000bfb   timer2SubB_isr
+00000c5f   timer2WideA_isr
+00000c61   timer2WideB_isr
+00000c11   timer3SubA_isr
+00000c13   timer3SubB_isr
+00000c63   timer3WideA_isr
+00000c65   timer3WideB_isr
+00000c4f   timer4SubA_isr
+00000c51   timer4SubB_isr
+00000c67   timer4WideA_isr
+00000c69   timer4WideB_isr
+00000c53   timer5SubA_isr
+00000c55   timer5SubB_isr
+00000c6b   timer5WideA_isr
+00000c6d   timer5WideB_isr
+00000c29   uDMAerror_isr
+00000c27   uDMAsofTransfer_isr
+00000bd5   uart0rxtx_isr
+00000bd7   uart1rxtx_isr
+00000c0d   uart2rxtx_isr
+00000c41   uart3rxtx_isr
+00000c43   uart4rxtx_isr
+00000c45   uart5rxtx_isr
+00000c47   uart6rxtx_isr
+00000c49   uart7rxtx_isr
+00000bc3   usageFault_isr
+00000c23   usb0_isr
+00000bef   watchdogTimer_isr
 
 
 GLOBAL SYMBOLS: SORTED BY Symbol Address 
@@ -301,191 +319,211 @@ address    name
 00000001   __TI_args_main
 00000200   __STACK_SIZE
 0000026d   main
-000002a5   _ZN4Gpio3PinC1Ev
-000002a5   _ZN4Gpio3PinC2Ev
-000002bd   _ZN4Gpio3PinC1ENS_4port5_portENS_3pin4_pinE
-000002bd   _ZN4Gpio3PinC2ENS_4port5_portENS_3pin4_pinE
-000002dd   _ZN4Gpio3Pin17enableDigitalFuncEv
-000002fd   _ZN4Gpio3Pin18disableDigitalFuncEv
-00000321   _ZN4Gpio3Pin7setModeENS_6config4mode5_modeE
-00000361   _ZN4Gpio3Pin9setIOModeENS_6config6ioMode7_ioModeE
-000003a1   _ZN4Gpio3Pin6setLowEv
-000003bb   _ZN4Gpio3Pin7setHighEv
-000003d7   _ZN4Gpio3Pin8setValueENS_5state6_stateE
-000003f9   _ZN4Gpio3Pin6toggleEv
-00000427   _ZN4Gpio3Pin6isHighEv
-00000455   _ZN4Gpio3Pin5isLowEv
-0000046f   _ZN4Gpio3Pin15enableInterruptEv
-0000048f   _ZN4Gpio3Pin16disableInterruptEv
-000004b3   _ZN4Gpio3Pin15configInterruptENS_6config10interrupts12intSenseType13_intSenseTypeENS2_17intSenseBothEdges18_intSenseBothEdgesENS2_12intEventType13_intEventTypeE
-0000056d   _ZN4Gpio3Pin9clearFlagEv
-00000591   _ZN4Gpio3Pin13setAnalogModeEv
-000005b5   _ZN4Gpio3Pin16setAlternateModeENS_6config8altModes9_altModesE
-000005f5   _ZN4Gpio3Pin15setCurrentDriveENS_6config12currentDrive13_currentDriveE
-0000064d   _ZN4Gpio3Pin9setPullUpEv
-0000066d   _ZN4Gpio3Pin11setPullDownEv
-0000068d   _ZN4Gpio3Pin12setOpenDrainEv
-000006ad   _ZN6delays8delay_msEj
-000006d1   __sti___8_main_cpp_70a26d19
-000006e9   reset_isr
-000006ef   mpuFault_isr
-000006f1   busFault_isr
-000006f3   usageFault_isr
-000006f5   svCall_isr
-000006f7   debugMonitor_isr
-000006f9   pendSV_isr
-000006fb   sysTick_isr
-000006fd   gpioB_isr
-000006ff   gpioC_isr
-00000701   gpioD_isr
-00000703   gpioE_isr
-00000705   uart0rxtx_isr
-00000707   uart1rxtx_isr
-00000709   ssi0rxtx_isr
-0000070b   i2c0masterSlave_isr
-0000070d   pwmFault_isr
-0000070f   pwm0_isr
-00000711   pwm1_isr
-00000713   pwm2_isr
-00000715   quadEnc0_isr
-00000717   adcSeq0_isr
-00000719   adcSeq1_isr
-0000071b   adcSeq2_isr
-0000071d   adcSeq3_isr
-0000071f   watchdogTimer_isr
-00000721   timer0SubA_isr
-00000723   timer0SubB_isr
-00000725   timer1SubA_isr
-00000727   timer1SubB_isr
-00000729   timer2SubA_isr
-0000072b   timer2SubB_isr
-0000072d   analogComparator0_isr
-0000072f   analogComparator1_isr
-00000731   analogComparator2_isr
-00000733   sysCtrl_isr
-00000735   flashCtrl_isr
-00000737   gpioF_isr
-00000739   gpioG_isr
-0000073b   gpioH_isr
-0000073d   uart2rxtx_isr
-0000073f   ssi1rxtx_isr
-00000741   timer3SubA_isr
-00000743   timer3SubB_isr
-00000745   i2c1masterSlave_isr
-00000747   quadEnc1_isr
-00000749   can0_isr
-0000074b   can1_isr
-0000074d   can2_isr
-0000074f   ethernet_isr
-00000751   hibernate_isr
-00000753   usb0_isr
-00000755   pwm3_isr
-00000757   uDMAsofTransfer_isr
-00000759   uDMAerror_isr
-0000075b   adc_1_Seq0_isr
-0000075d   adc_1_Seq1_isr
-0000075f   adc_1_Seq2_isr
-00000761   adc_1_Seq3_isr
-00000763   i2s0_isr
-00000765   extBusInterface_isr
-00000767   gpioJ_isr
-00000769   gpioK_isr
-0000076b   gpioL_isr
-0000076d   ssi2rxtx_isr
-0000076f   ssi3rxtx_isr
-00000771   uart3rxtx_isr
-00000773   uart4rxtx_isr
-00000775   uart5rxtx_isr
-00000777   uart6rxtx_isr
-00000779   uart7rxtx_isr
-0000077b   i2c2masterSlave_isr
-0000077d   i2c3masterSlave_isr
-0000077f   timer4SubA_isr
-00000781   timer4SubB_isr
-00000783   timer5SubA_isr
-00000785   timer5SubB_isr
-00000787   timer0WideA_isr
-00000789   timer0WideB_isr
-0000078b   timer1WideA_isr
-0000078d   timer1WideB_isr
-0000078f   timer2WideA_isr
-00000791   timer2WideB_isr
-00000793   timer3WideA_isr
-00000795   timer3WideB_isr
-00000797   timer4WideA_isr
-00000799   timer4WideB_isr
-0000079b   timer5WideA_isr
-0000079d   timer5WideB_isr
-0000079f   fpu_isr
-000007a1   peci0_isr
-000007a3   lpc0_isr
-000007a5   i2c4masterSlave_isr
-000007a7   i2c5masterSlave_isr
-000007a9   gpioM_isr
-000007ab   gpioN_isr
-000007ad   quadEnc2_isr
-000007af   fan0_isr
-000007b1   gpioP_isr
-000007b3   gpioP1_isr
-000007b5   gpioP2_isr
-000007b7   gpioP3_isr
-000007b9   gpioP4_isr
-000007bb   gpioP5_isr
-000007bd   gpioP6_isr
-000007bf   gpioP7_isr
-000007c1   gpioQ_isr
-000007c3   gpioQ1_isr
-000007c5   gpioQ2_isr
-000007c7   gpioQ3_isr
-000007c9   gpioQ4_isr
-000007cb   gpioQ5_isr
-000007cd   gpioQ6_isr
-000007cf   gpioQ7_isr
-000007d1   gpioR_isr
-000007d3   gpioS_isr
-000007d5   pwm_1_0_isr
-000007d7   pwm_1_1_isr
-000007d9   pwm_1_2_isr
-000007db   pwm_1_3_isr
-000007dd   pwm_1_Fault_isr
-000007df   gpioA_isr
-000007e1   _Z8ResetISRv
-000007ed   __aeabi_memcpy
-000007ed   __aeabi_memcpy4
-000007ed   __aeabi_memcpy8
-000007ed   memcpy
-00000889   __TI_auto_init
-0000091d   _ZN5clock5clock6configENS_13configOptions11clockSource7sourcesENS1_9clockRate10_clockRateENS1_11enablePIOSC12_enablePIOSCENS1_10enableMOSC11_enableMOSCE
-00000a09   _c_int00
-00000a51   copy_in
-00000a95   C$$EXIT
-00000a99   abort
-00000aa1   exit
-00000ad9   _ZN4Gpio4PortILNS_4port5_portE1073893376EE11enableClockENS_10peripheral11_peripheralE
-00000af5   _args_main
-00000b0d   _register_unlock
-00000b13   _register_lock
-00000b1b   _nop
-00000b21   __TI_zero_init
-00000b33   __TI_decompress_none
-00000b41   __TI_decompress_rle24
-00000b48   SHT$$INIT_ARRAY$$Base
-00000b4c   SHT$$INIT_ARRAY$$Limit
-00000b60   __TI_Handler_Table_Base
-00000b6c   __TI_Handler_Table_Limit
-00000b78   __TI_CINIT_Base
-00000b88   __TI_CINIT_Limit
+000002f9   timer0WideA_isr
+0000030b   _ZN5clock5ClockC1Ev
+0000030b   _ZN5clock5ClockC2Ev
+0000031d   _ZN5clock5Clock6configENS_6config11clockSource12_clockSourceENS1_9clockRate10_clockRateENS1_27precisionInternalOscillator28_precisionInternalOscillatorENS1_14mainOscillator15_mainOscillatorE
+000003a5   _ZN5clock5Clock15enableGpioClockENS_10peripheral4gpio5_gpioENS_6config11gpioBusType12_gpioBusTypeE
+000003e7   _ZN5clock5Clock22enableSimpleTimerClockENS_10peripheral5timer11simpleTimer12_simpleTimerE
+0000040b   _ZN5clock5Clock20enableWideTimerClockENS_10peripheral5timer9wideTimer10_wideTimerE
+0000042f   _ZN5clock5Clock15enableUartClockENS_10peripheral4uart5_uartE
+00000453   _ZN5clock5Clock14enableADCClockENS_10peripheral3adc4_adcE
+00000477   _ZN4Gpio3PinC1Ev
+00000477   _ZN4Gpio3PinC2Ev
+0000048f   _ZN4Gpio3PinC1ENS_4port5_portENS_3pin4_pinE
+0000048f   _ZN4Gpio3PinC2ENS_4port5_portENS_3pin4_pinE
+000004af   _ZN4Gpio3Pin17enableDigitalFuncEv
+000004cf   _ZN4Gpio3Pin18disableDigitalFuncEv
+000004f3   _ZN4Gpio3Pin7setModeENS_6config4mode5_modeE
+00000533   _ZN4Gpio3Pin9setIOModeENS_6config6ioMode7_ioModeE
+00000573   _ZN4Gpio3Pin6setLowEv
+00000591   _ZN4Gpio3Pin7setHighEv
+000005b5   _ZN4Gpio3Pin8setValueENS_5state6_stateE
+000005e1   _ZN4Gpio3Pin6toggleEv
+00000615   _ZN4Gpio3Pin6isHighEv
+00000643   _ZN4Gpio3Pin5isLowEv
+00000661   _ZN4Gpio3Pin15enableInterruptEv
+00000685   _ZN4Gpio3Pin16disableInterruptEv
+000006a9   _ZN4Gpio3Pin15configInterruptENS_6config10interrupts12intSenseType13_intSenseTypeENS2_17intSenseBothEdges18_intSenseBothEdgesENS2_12intEventType13_intEventTypeE
+00000763   _ZN4Gpio3Pin9clearFlagEv
+00000789   _ZN4Gpio3Pin13setAnalogModeEv
+000007a9   _ZN4Gpio3Pin16setAlternateModeENS_6config8altModes9_altModesE
+000007e9   _ZN4Gpio3Pin15setCurrentDriveENS_6config12currentDrive13_currentDriveE
+00000841   _ZN4Gpio3Pin9setPullUpEv
+00000861   _ZN4Gpio3Pin11setPullDownEv
+00000881   _ZN4Gpio3Pin12setOpenDrainEv
+000008a1   _ZN7GpTimer5TimerC1Ev
+000008a1   _ZN7GpTimer5TimerC2Ev
+000008b9   _ZN7GpTimer5TimerC1ENS_11timerModule12_timerModuleENS_8subtimer9_subtimerE
+000008b9   _ZN7GpTimer5TimerC2ENS_11timerModule12_timerModuleENS_8subtimer9_subtimerE
+000008d9   _ZN7GpTimer5Timer6configEmfNS_6config11timerConfig11joiningMode12_joiningModeENS2_14countDirection15_countDirectionENS2_9timerMode10_timerModeENS2_15timerInterrupts16_timerInterruptsE
+00000a39   _ZN7GpTimer5Timer12disableTimerEv
+00000a5b   _ZN7GpTimer5Timer11enableTimerEv
+00000a79   _ZN7GpTimer5Timer14clearInterruptENS_6config11timerConfig13interruptFlag14_interruptFlagE
+00000a95   _ZN6delays8delay_msEj
+00000ab9   _ZN4core15IntEnableMasterEv
+00000ac5   _ZN4core15enableInterruptENS_10interrupts10_interruptE
+00000b5f   __sti___8_main_cpp_70a26d19
+00000bb9   reset_isr
+00000bbf   mpuFault_isr
+00000bc1   busFault_isr
+00000bc3   usageFault_isr
+00000bc5   svCall_isr
+00000bc7   debugMonitor_isr
+00000bc9   pendSV_isr
+00000bcb   sysTick_isr
+00000bcd   gpioB_isr
+00000bcf   gpioC_isr
+00000bd1   gpioD_isr
+00000bd3   gpioE_isr
+00000bd5   uart0rxtx_isr
+00000bd7   uart1rxtx_isr
+00000bd9   ssi0rxtx_isr
+00000bdb   i2c0masterSlave_isr
+00000bdd   pwmFault_isr
+00000bdf   pwm0_isr
+00000be1   pwm1_isr
+00000be3   pwm2_isr
+00000be5   quadEnc0_isr
+00000be7   adcSeq0_isr
+00000be9   adcSeq1_isr
+00000beb   adcSeq2_isr
+00000bed   adcSeq3_isr
+00000bef   watchdogTimer_isr
+00000bf1   timer0SubA_isr
+00000bf3   timer0SubB_isr
+00000bf5   timer1SubA_isr
+00000bf7   timer1SubB_isr
+00000bf9   timer2SubA_isr
+00000bfb   timer2SubB_isr
+00000bfd   analogComparator0_isr
+00000bff   analogComparator1_isr
+00000c01   analogComparator2_isr
+00000c03   sysCtrl_isr
+00000c05   flashCtrl_isr
+00000c07   gpioF_isr
+00000c09   gpioG_isr
+00000c0b   gpioH_isr
+00000c0d   uart2rxtx_isr
+00000c0f   ssi1rxtx_isr
+00000c11   timer3SubA_isr
+00000c13   timer3SubB_isr
+00000c15   i2c1masterSlave_isr
+00000c17   quadEnc1_isr
+00000c19   can0_isr
+00000c1b   can1_isr
+00000c1d   can2_isr
+00000c1f   ethernet_isr
+00000c21   hibernate_isr
+00000c23   usb0_isr
+00000c25   pwm3_isr
+00000c27   uDMAsofTransfer_isr
+00000c29   uDMAerror_isr
+00000c2b   adc_1_Seq0_isr
+00000c2d   adc_1_Seq1_isr
+00000c2f   adc_1_Seq2_isr
+00000c31   adc_1_Seq3_isr
+00000c33   i2s0_isr
+00000c35   extBusInterface_isr
+00000c37   gpioJ_isr
+00000c39   gpioK_isr
+00000c3b   gpioL_isr
+00000c3d   ssi2rxtx_isr
+00000c3f   ssi3rxtx_isr
+00000c41   uart3rxtx_isr
+00000c43   uart4rxtx_isr
+00000c45   uart5rxtx_isr
+00000c47   uart6rxtx_isr
+00000c49   uart7rxtx_isr
+00000c4b   i2c2masterSlave_isr
+00000c4d   i2c3masterSlave_isr
+00000c4f   timer4SubA_isr
+00000c51   timer4SubB_isr
+00000c53   timer5SubA_isr
+00000c55   timer5SubB_isr
+00000c59   timer0WideB_isr
+00000c5b   timer1WideA_isr
+00000c5d   timer1WideB_isr
+00000c5f   timer2WideA_isr
+00000c61   timer2WideB_isr
+00000c63   timer3WideA_isr
+00000c65   timer3WideB_isr
+00000c67   timer4WideA_isr
+00000c69   timer4WideB_isr
+00000c6b   timer5WideA_isr
+00000c6d   timer5WideB_isr
+00000c6f   fpu_isr
+00000c71   peci0_isr
+00000c73   lpc0_isr
+00000c75   i2c4masterSlave_isr
+00000c77   i2c5masterSlave_isr
+00000c79   gpioM_isr
+00000c7b   gpioN_isr
+00000c7d   quadEnc2_isr
+00000c7f   fan0_isr
+00000c81   gpioP_isr
+00000c83   gpioP1_isr
+00000c85   gpioP2_isr
+00000c87   gpioP3_isr
+00000c89   gpioP4_isr
+00000c8b   gpioP5_isr
+00000c8d   gpioP6_isr
+00000c8f   gpioP7_isr
+00000c91   gpioQ_isr
+00000c93   gpioQ1_isr
+00000c95   gpioQ2_isr
+00000c97   gpioQ3_isr
+00000c99   gpioQ4_isr
+00000c9b   gpioQ5_isr
+00000c9d   gpioQ6_isr
+00000c9f   gpioQ7_isr
+00000ca1   gpioR_isr
+00000ca3   gpioS_isr
+00000ca5   pwm_1_0_isr
+00000ca7   pwm_1_1_isr
+00000ca9   pwm_1_2_isr
+00000cab   pwm_1_3_isr
+00000cad   pwm_1_Fault_isr
+00000caf   gpioA_isr
+00000cb1   _Z8ResetISRv
+00000cbd   __aeabi_memcpy
+00000cbd   __aeabi_memcpy4
+00000cbd   __aeabi_memcpy8
+00000cbd   memcpy
+00000d59   __TI_auto_init
+00000e4d   _c_int00
+00000e95   copy_in
+00000ed9   C$$EXIT
+00000edd   abort
+00000ee5   exit
+00000f1d   _args_main
+00000f35   _register_unlock
+00000f3b   _register_lock
+00000f43   _nop
+00000f49   __TI_zero_init
+00000f5b   __TI_decompress_none
+00000f69   __TI_decompress_rle24
+00000f70   SHT$$INIT_ARRAY$$Base
+00000f74   SHT$$INIT_ARRAY$$Limit
+00000f8c   __TI_Handler_Table_Base
+00000f98   __TI_Handler_Table_Limit
+00000fa0   __TI_CINIT_Base
+00000fb0   __TI_CINIT_Limit
 20000000   __stack
 20000200   __STACK_END
 20000200   __STACK_TOP
-20000200   _lock
-20000204   _unlock
-20000208   __TI_cleanup_ptr
-2000020c   __TI_dtors_ptr
-20000210   main_func_sp
-20000214   led
+20000200   systemClock
+20000204   led
+2000020c   led2
+20000214   sTimer0
+2000021c   _lock
+20000220   _unlock
+20000224   __TI_cleanup_ptr
+20000228   __TI_dtors_ptr
+2000022c   _ZN5clock5Clock14CLOCK_RATE_MHZE
+20000230   main_func_sp
 ffffffff   __binit__
 ffffffff   __c_args__
 ffffffff   binit
 
-[191 symbols]
+[211 symbols]
