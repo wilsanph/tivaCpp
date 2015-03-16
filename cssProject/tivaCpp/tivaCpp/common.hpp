@@ -8,6 +8,9 @@
 #ifndef COMMON_HPP_
 #define COMMON_HPP_
 
+//#define DEBUG
+
+typedef unsigned long long u64;
 typedef unsigned long u32;
 typedef unsigned char u8;
 typedef unsigned short u16;

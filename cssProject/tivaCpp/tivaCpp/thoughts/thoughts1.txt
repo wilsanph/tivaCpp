@@ -1,0 +1,10 @@
+
+
+Be aware that for timers counting in the up direction start from 0x0 to its preload value ...
+... and the ones counting down start at the preload value to 0x0.
+Not sure, but there is something wrong or i misunderstood something in the datasheet.
+
+TODO: the additions in some address calculations can be replaced by TMP functions like Add, and replacing
+the parameters by constant values in enumerators
+
+see pg. 707

@@ -10,6 +10,7 @@ ORDERED_OBJS += \
 $(GEN_CMDS__FLAG) \
 "./main.obj" \
 "./tm4c123gh6pm_startup_ccs.obj" \
+"./tivaCpp/GProjectCore/GObject.obj" \
 "../tm4c123gh6pm.cmd" \
 -l"libc.a" \
 
@@ -21,7 +22,9 @@ RMDIR := RMDIR /S/Q
 # All of the sources participating in the build are defined here
 -include sources.mk
 -include subdir_vars.mk
+-include tivaCpp/GProjectCore/subdir_vars.mk
 -include subdir_rules.mk
+-include tivaCpp/GProjectCore/subdir_rules.mk
 -include objects.mk
 
 ifneq ($(MAKECMDGOALS),clean)
@@ -128,7 +131,7 @@ all: tivaCpp.out
 tivaCpp.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: ARM Linker'
-	"c:/ti/ccsv6/tools/compiler/arm_5.1.6/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 --abi=eabi -me -g --gcc --define=ccs="ccs" --define=PART_TM4C123GH6PM --display_error_number --diag_warning=225 --diag_wrap=off -z -m"tivaCpp.map" --heap_size=0 --stack_size=512 -i"c:/ti/ccsv6/tools/compiler/arm_5.1.6/lib" -i"c:/ti/ccsv6/tools/compiler/arm_5.1.6/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="tivaCpp_linkInfo.xml" --rom_model -o "tivaCpp.out" $(ORDERED_OBJS)
+	"c:/ti/ccsv6/tools/compiler/arm_5.1.6/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 --abi=eabi -me -g --gcc --define=ccs="ccs" --define=PART_TM4C123GH6PM --display_error_number --diag_warning=225 --diag_wrap=off -z -m"tivaCpp.map" --heap_size=1024 --stack_size=512 -i"c:/ti/ccsv6/tools/compiler/arm_5.1.6/lib" -i"c:/ti/ccsv6/tools/compiler/arm_5.1.6/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="tivaCpp_linkInfo.xml" --rom_model -o "tivaCpp.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -141,8 +144,8 @@ tivaCpp.hex: $(EXE_OUTPUTS)
 # Other Targets
 clean:
 	-$(RM) $(EXE_OUTPUTS__QUOTED)$(BIN_OUTPUTS__QUOTED)
-	-$(RM) "main.pp" "tm4c123gh6pm_startup_ccs.pp" 
-	-$(RM) "main.obj" "tm4c123gh6pm_startup_ccs.obj" 
+	-$(RM) "main.pp" "tm4c123gh6pm_startup_ccs.pp" "tivaCpp\GProjectCore\GObject.pp" 
+	-$(RM) "main.obj" "tm4c123gh6pm_startup_ccs.obj" "tivaCpp\GProjectCore\GObject.obj" 
 	-@echo 'Finished clean'
 	-@echo ' '
 

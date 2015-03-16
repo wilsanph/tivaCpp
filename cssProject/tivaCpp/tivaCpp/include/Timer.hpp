@@ -10,6 +10,8 @@
 
 #pragma once
 
+#include "../GProjectCore/GObject.hpp"
+
 namespace GpTimer
 {
 	
@@ -83,6 +85,15 @@ namespace GpTimer
 				};
 			}
 
+			namespace timerAlternateModeSelect
+			{
+				enum _timerAlternateModeSelect
+				{
+					capOrCompEnabled = 0x00,
+					pwmEnabled = 0x08
+				};
+			}
+
 			namespace timerInterrupts
 			{
 				enum _timerInterrupts
@@ -126,14 +137,15 @@ namespace GpTimer
 
 	}
 
-	class Timer
+	class Timer : public gObject::GObject
 	{
-
 
 	public:
 		Timer();
 		Timer( timerModule::_timerModule tTimerMod,
 			   subtimer::_subtimer tSubtimer );
+
+		void init();
 
 		config::timerConfig::statusCode::_statusCode config ( u32 period_us,
 															  float tick_resolution_us,
@@ -149,7 +161,7 @@ namespace GpTimer
 		timerModule::_timerModule m_timerMod;
 		subtimer::_subtimer m_subTimer;
 
-		void setMatchRegister( u32 value );
+		////void setMatchRegister( u32 value );
 		
 	};
 
@@ -162,10 +174,11 @@ namespace GpTimer
 		Pwm( timerModule::_timerModule tTimerMod,
 			 subtimer::_subtimer tSubtimer );
 
-		void configPwm( u32 period_us,
-					    float duty, 
-					 	float tick_resolution_us,
-					 	config::pwmConfig::outputLevel::_outputLevel pwmOutputLevel );
+		void init();
+
+		void configPWM( u32 period_us,
+					 float duty,
+					 config::pwmConfig::outputLevel::_outputLevel pwmOutputLevel );
 
 		void setDuty( float duty );
 

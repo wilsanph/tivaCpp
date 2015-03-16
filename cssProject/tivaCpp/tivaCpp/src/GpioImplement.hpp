@@ -154,9 +154,9 @@ namespace Gpio
 	void Gpio::Pin::setAlternateMode( Gpio::config::altModes::_altModes pAltMode )
 	{
 		reinterpret_cast<MapGpio::GpioRegs*>
-			( this->m_port )->GPIOPCTL &= 0xffffffff - ( 0xf << this->m_pin );
+			( this->m_port )->GPIOPCTL &= 0xffffffff - ( 0xf << ( 4 * this->m_pin ) );
 		reinterpret_cast<MapGpio::GpioRegs*>
-			( this->m_port )->GPIOPCTL |= pAltMode << this->m_pin;
+			( this->m_port )->GPIOPCTL |= pAltMode << ( 4 * this->m_pin );
 	}
 
 	void Gpio::Pin::setCurrentDrive( Gpio::config::currentDrive::_currentDrive pCurrentDrive )
